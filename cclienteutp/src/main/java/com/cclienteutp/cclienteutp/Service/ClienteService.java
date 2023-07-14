@@ -42,4 +42,14 @@ public class ClienteService {
 
     }
 
+    public ResponseDTO ActualizarCliente(Cliente cliente)
+    {
+        return  clienteRepository.ActualizarCliente(
+                cliente.getIdcliente(),
+                cliente.getNombre(),
+                cliente.getApellido(),
+                cliente.getEmail(),
+                cliente.getTelefono(),
+                cliente.getSaldo());
+    }
 }

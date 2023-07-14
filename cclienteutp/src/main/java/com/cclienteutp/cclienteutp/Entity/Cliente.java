@@ -9,7 +9,7 @@ import lombok.Data;
 @Entity
 public class Cliente {
     @Id
-    private Integer IdCliente;
+    private Integer idcliente;
     private String nombre;
     private String apellido;
     private String email;
@@ -20,7 +20,7 @@ public class Cliente {
 
         //Listar clientes de mi tabla de mi base de datos, mostrar, buscar, actualizar.
     public Cliente (Integer IdCliente, String nombre,String apellido,String email,String telefono,Double saldo){
-        this.IdCliente =IdCliente;
+        this.idcliente =IdCliente;
         this.nombre = nombre;
         this.apellido =apellido;
         this.email = email;
@@ -40,7 +40,7 @@ public class Cliente {
 
     //ELIMINAR CLIENTE
     public Cliente(Integer IdCliente){
-        this.IdCliente =IdCliente;
+        this.idcliente =IdCliente;
     }
 
 }

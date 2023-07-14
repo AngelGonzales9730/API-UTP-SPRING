@@ -21,15 +21,21 @@ public class ClienteService {
         return clienteRepository.BuscarClienteText(texto);
     }
 
-    public List<Cliente> BuscarClienteId(Integer id){
+   /* public List<Cliente> BuscarClienteId(Integer id){
         return clienteRepository.BuscarClienteId(id);
+    }*/
+
+    public Cliente BuscarClienteId(int IdCliente){
+        return clienteRepository.BuscarClienteId(IdCliente);
     }
 
     public ResponseDTO InsertarCliente(Cliente cliente){
         return clienteRepository.InsertarCliente(cliente.getNombre(),cliente.getApellido(), cliente.getEmail(), cliente.getTelefono(), cliente.getSaldo());
     }
 
-
+    public ResponseDTO EliminarCliente(int IdCliente){
+        return clienteRepository.EliminarCliente(IdCliente);
+    }
 
     public ResponseDTO ActializarCliente(Cliente cliente){
         return clienteRepository.AcualizarCliente(

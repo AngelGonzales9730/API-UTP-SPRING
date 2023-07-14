@@ -45,4 +45,8 @@ public class ClienteController {
         return clienteService.EliminarCliente(idCliente);
     }
 
+    @PostMapping("/ActualizarCliente")
+    public ResponseDTO ActualizarCliente(@RequestBody Cliente cliente){
+        return clienteService.ActualizarCliente(cliente);
+    }
 }

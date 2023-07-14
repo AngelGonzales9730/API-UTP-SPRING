@@ -29,8 +29,16 @@ public class ClienteService {
         return clienteRepository.InsertarCliente(cliente.getNombre(),cliente.getApellido(), cliente.getEmail(), cliente.getTelefono(), cliente.getSaldo());
     }
 
-    public List<Cliente> EliminarCliente(Integer id){
-        return clienteRepository.EliminarCliente(id);
+
+
+    public ResponseDTO ActializarCliente(Cliente cliente){
+        return clienteRepository.AcualizarCliente(
+        cliente.getId_cliente(),
+        cliente.getNombre(),
+        cliente.getApellido(),
+        cliente.getEmail(),
+        cliente.getTelefono(),
+        cliente.getSaldo());
     }
 
 }

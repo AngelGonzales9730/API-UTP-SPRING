@@ -4,6 +4,7 @@ import com.cclienteutp.cclienteutp.DTO.ResponseDTO;
 import com.cclienteutp.cclienteutp.Entity.Cliente;
 import com.cclienteutp.cclienteutp.Service.ClienteService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
@@ -47,9 +48,11 @@ public class ClienteController {
         return clienteService.InsertarCliente(cliente);
     }
 
-    @PostMapping ("/EliminarCliente")
-    public ResponseDTO EliminarCliente(@RequestParam("id_cliente") int id_cliente){
-        return clienteService.EliminarCliente(id_cliente);
+
+
+    @PostMapping("/ActualizarCliente")
+    public ResponseDTO ActualizarCliente(@RequestBody Cliente cliente){
+        return clienteService.ActializarCliente(cliente);
     }
 
 }

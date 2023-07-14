@@ -26,12 +26,12 @@ public class ClienteService {
     public responseDTO InsertarCliente(Cliente cliente){
         return clienteRepository.InsertarCliente(cliente.getNombre(),cliente.getApellido(),cliente.getEmail(),cliente.getTelefono(),cliente.getSaldo());
     }
-
     public responseDTO EliminarCliente(Cliente cliente){
         return clienteRepository.EliminarCliente(cliente.getIdcliente());
     }
 
-    public List<Cliente>  BuscarCliente(Integer id){
+    public List<Cliente>  BuscarCliente(int id){
+
         return clienteRepository.BuscarCliente(id);
     }
 
@@ -39,3 +39,4 @@ public class ClienteService {
         return clienteRepository.ActualizarCliente(cliente.getIdcliente(),cliente.getNombre(),cliente.getApellido(),cliente.getEmail(),cliente.getTelefono(),cliente.getSaldo());
     }
 }
+

@@ -32,12 +32,12 @@ public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
 
     @Query(value = "{CALL BuscarCliente(:_Idcliente)}", nativeQuery = true)
     List<Cliente>  BuscarCliente(
-            @Param("_Idcliente") Integer busqueda
+            @Param("_Idcliente") int busqueda
     );
 
     @Query(value = "{CALL ActualizarCliente(:_Idcliente,:_Nombre,:_Apellido,:_Email,:_Telefono,:_Saldo)}", nativeQuery = true)
     responseDTO ActualizarCliente(
-            @Param("_Idcliente") Integer idcliente,
+            @Param("_Idcliente") int idcliente,
             @Param("_Nombre") String nombre,
             @Param("_Apellido") String apellido,
             @Param("_Email") String email,

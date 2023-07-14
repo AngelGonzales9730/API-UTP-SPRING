@@ -44,7 +44,7 @@ public class ClienteController {
         return clienteService.EliminarCliente(cliente);
     }
     @PostMapping("/BuscarCliente")
-    public ResponseEntity<List<Cliente>> BuscarCliente(@RequestParam ("id") Integer id){
+    public ResponseEntity<List<Cliente>> BuscarCliente(@RequestParam ("id") int id){
         return new ResponseEntity<>(clienteService.BuscarCliente(id), HttpStatus.OK);
     }
     @PostMapping("/ActualizarCliente")

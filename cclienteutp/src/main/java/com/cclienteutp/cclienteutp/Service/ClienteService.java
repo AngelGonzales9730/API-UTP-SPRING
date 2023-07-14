@@ -37,4 +37,14 @@ public class ClienteService {
     public ResponseDTO EliminarCliente(String idcliente){
         return clienteRepository.EliminarCliente(idcliente);
     }
+
+    public ResponseDTO ActualizarCliente(Cliente cliente){
+        return clienteRepository.ActualizarCliente(
+                cliente.getId_cliente(),
+                cliente.getNombre(),
+                cliente.getApellido(),
+                cliente.getEmail(),
+                cliente.getTelefono(),
+                cliente.getSaldo());
+    }
 }

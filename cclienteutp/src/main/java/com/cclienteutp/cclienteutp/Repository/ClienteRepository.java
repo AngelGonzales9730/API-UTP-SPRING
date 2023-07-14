@@ -38,4 +38,7 @@ public interface ClienteRepository extends JpaRepository<Cliente,Integer> {
             @Param("_Telefono") String Telefono,
             @Param("_Saldo") double Saldo
     );
+
+    @Query(value = "{CALL SP_BuscarClienteId(:_IdCliente)}", nativeQuery = true)
+    Cliente BuscarClienteId(@Param("_IdCliente") int IdCliente);
 }

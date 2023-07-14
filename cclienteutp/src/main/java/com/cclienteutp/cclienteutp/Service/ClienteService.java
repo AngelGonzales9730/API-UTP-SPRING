@@ -39,4 +39,8 @@ public class ClienteService {
                 cliente.getSaldo());
     }
 
+    public Cliente BuscarClienteId(int IdCliente){
+        return clienteRepository.BuscarClienteId(IdCliente);
+    }
+
 }

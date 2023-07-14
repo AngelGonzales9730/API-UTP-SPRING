@@ -49,4 +49,9 @@ public class ClienteController {
     public ResponseDTO ActualizarCliente(@RequestBody Cliente cliente){
         return clienteService.ActualizarCliente(cliente);
     }
+
+    @PostMapping("/BuscarClienteID")
+    public Cliente BuscarClienteID(@RequestParam("idCliente") int idCliente){
+        return clienteService.BuscarClienteId(idCliente);
+    }
 }

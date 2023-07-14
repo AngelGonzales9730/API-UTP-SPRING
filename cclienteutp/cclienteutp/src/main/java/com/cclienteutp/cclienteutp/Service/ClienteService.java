@@ -26,5 +26,15 @@ public class ClienteService {
     public ResponseDTO EliminarCliente(Cliente cliente){
         return clienteRepository.EliminarCliente(cliente.getId_cliente());
     }
+    public ResponseDTO ActualizarCliente(Cliente cliente){
+        return clienteRepository.ActualizarCliente (
+            cliente.getId_cliente(),
+            cliente.getNombre(),
+            cliente.getApellido(),
+            cliente.getEmail(),
+            cliente.getTelefono(),
+            cliente.getSaldo());
+
+    }
     }
 

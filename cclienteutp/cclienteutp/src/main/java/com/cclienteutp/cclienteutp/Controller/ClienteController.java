@@ -37,8 +37,14 @@ public class ClienteController {
     public ResponseDTO InsertarCliente(@RequestBody Cliente cliente){
         return clienteService.InsertarCLiente(cliente);
     }
+
     @PostMapping("/EliminarCliente")
-    public ResponseDTO EliminarCliente(@RequestBody Cliente cliente){
-        return clienteService.EliminarCliente(cliente);
+    public ResponseDTO EliminarCliente(@RequestParam ("idcliente") int idcliente){
+        return clienteService.EliminarCliente(idcliente);
+    }
+
+    @PostMapping("/ActualizarCliente")
+    public ResponseDTO ActualizarCliente(@RequestBody Cliente cliente){
+        return clienteService.ActualizarCliente(Cliente);
     }
 }

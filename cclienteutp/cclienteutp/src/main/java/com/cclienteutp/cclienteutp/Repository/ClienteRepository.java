@@ -26,8 +26,18 @@ public interface ClienteRepository extends JpaRepository<Cliente,Integer> {
             @Param("_Telefono") String telefono,
             @Param("_Saldo") double saldo
     );
-    @Query(value = "{CALL SP_EliminarCliente(:_Idcliente)}", nativeQuery = true)
+
+    @Query(value = "{CALL SP_EliminarCliente(:_idcliente)}", nativeQuery = true)
     ResponseDTO EliminarCliente(
-            @Param("_Idcliente") Integer idcliente
+            @Param("_idcliente") int idcliente
+    );
+    @Query(value = "{CALL SP_ActualizarCliente(:_IdCliente, :_Nombre, :_Apellido, :_Email, :_Telefono, :_Saldo)}", nativeQuery = true)
+    ResponseDTO ActualizarCliente(
+            @Param("_IdCliente") int IdCliente,
+            @Param("_Nombre") String nombre,
+            @Param("_Apellido") String Apellido,
+            @Param("_Email") String email,
+            @Param("_Telefono") String telefono,
+            @Param("_Saldo") double saldo
     );
 }
